@@ -58,8 +58,11 @@ const Steps = () => (
         { title: "Create Account", desc: "Sign up in seconds. No credit card required.", icon: "👤" },
         { title: "Choose Products", desc: "Select the tools that fit your needs.", icon: "📦" },
         { title: "Start Creating", desc: "Download and start using immediately.", icon: "🚀" },
-      ].map((step) => (
+      ].map((step, index) => (
         <div key={step.title} className="border rounded-xl bg-white p-6 text-center">
+          <div className="mx-auto mb-3 w-12 h-12 flex items-center justify-center rounded-full bg-linear-to-r from-purple-500 to-violet-500 text-white font-bold">
+            {index + 1}
+          </div>
           <div className="text-5xl mb-3">{step.icon}</div>
           <p className="font-bold text-lg">{step.title}</p>
           <p className="mt-2 text-slate-600">{step.desc}</p>
@@ -238,10 +241,18 @@ function App() {
             Products
           </button>
           <button
-            className={`px-5 py-2 rounded-lg ${view === "cart" ? "bg-purple-600 text-white" : "bg-white border"}`}
+            className={`relative px-5 py-2 rounded-lg ${view === "cart" ? "bg-purple-600 text-white" : "bg-white border"}`}
             onClick={() => setView("cart")}
           >
-            Cart
+            <span className="inline-flex items-center gap-2">
+              <span className="text-lg">🛒</span>
+              Cart
+            </span>
+            {cart.length > 0 && (
+              <span className="absolute -top-1 -right-2 inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-amber-300 text-black text-xs font-bold">
+                {cart.length}
+              </span>
+            )}
           </button>
         </div>
 
