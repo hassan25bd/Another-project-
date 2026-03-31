@@ -18,16 +18,16 @@ const Navbar = ({ setView, cartCount }) => {
           <button
             onClick={() => setView("cart")}
             aria-label="Open cart"
-            className="relative p-2 rounded-lg text-2xl transition hover:bg-white/20 focus:outline-none focus:ring-2 focus:ring-white/60">
+            className={`relative p-2 rounded-lg text-2xl transition focus:outline-none focus:ring-2 focus:ring-white/60 ${cartCount > 0 ? "bg-white/20 shadow-lg shadow-amber-300/50" : "hover:bg-white/20"}`}>
             🛒
             {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 min-w-[1.3rem] h-5 rounded-full bg-amber-300 text-black text-xs font-bold leading-5 text-center animate-pulse">
+              <span className="absolute -top-2 -right-2 min-w-[1.3rem] h-5 rounded-full bg-amber-300 text-black text-xs font-bold leading-5 text-center animate-bounce">
                 {cartCount}
               </span>
             )}
           </button>
           <button className="text-sm font-medium transition hover:text-slate-100">Login</button>
-          <button className="text-sm font-semibold bg-linear-to-r from-purple-500 to-fuchsia-500 text-white px-5 py-2 rounded-xl shadow-xl hover:shadow-2xl transition">
+          <button className="text-sm font-semibold bg-linear-to-r from-purple-500 to-fuchsia-500 text-white px-5 py-2 rounded-xl shadow-xl hover:shadow-2xl transition hover:-translate-y-0.5">
             Get Started
           </button>
         </div>

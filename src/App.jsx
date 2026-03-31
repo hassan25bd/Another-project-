@@ -26,7 +26,7 @@ const Banner = () => (
         </div>
       </div>
       <div className="h-64 md:h-72 rounded-2xl overflow-hidden ring-1 ring-white/30 backdrop-blur-sm flex items-center justify-center">
-        <img src="../assets/banner.png" alt="DigiTools Banner" className="h-full w-full object-cover" />
+        <img src="/assets/banner.png" alt="DigiTools Banner" className="h-full w-full object-cover" />
       </div>
     </div>
   </section>
@@ -40,7 +40,7 @@ const Stats = () => (
         { label: "Premium Tools", value: "200+", icon: "🛠️" },
         { label: "Rating", value: "4.9", icon: "⭐" },
       ].map((stat) => (
-        <article key={stat.label} className="p-6 border border-violet-100 rounded-2xl text-center transition hover:-translate-y-1 hover:shadow-lg">
+        <article key={stat.label} className="p-6 border bg-purple-200 border-violet-100 rounded-2xl text-center transition hover:-translate-y-1 hover:shadow-lg">
           <div className="text-4xl mb-3">{stat.icon}</div>
           <h3 className="text-4xl font-bold text-purple-700">{stat.value}</h3>
           <p className="mt-1 text-slate-500">{stat.label}</p>
@@ -262,3 +262,4 @@ function App() {
 }
 
 export default App;
+
